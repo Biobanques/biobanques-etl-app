@@ -1,0 +1,16 @@
+#packager de manière sure:
+mvn package
+#pour packager pour un site :
+mvn package -p monsite
+#example:
+mvn clean package -P lille
+mvn clean package -P nice
+#pour lancer un jar : 
+java -jar biobanques-connecteur-0.9.jar
+#notes execution du connecteur : 
+utiliser au moins une fois la connexion ssh poru authentifier le site et accepter
+.( idée faire télécharger les connecteurs direcets sur leurs serveurs sftp)
+
+#deployer pour les biobanque sur chaque serveur
+#pour nice
+scp /data/developpement/workspace/inserm-etl-app/target/*.jar root@de1185.ispfr.net:/inserm_sftp/nice/applications/
